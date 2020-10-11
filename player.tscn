@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/all.png" type="Texture" id=1]
+[ext_resource path="res://Assets/light.png" type="Texture" id=2]
+[ext_resource path="res://Seens/player.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.79399, 2.74549 )
+
+[node name="player" type="KinematicBody2D"]
+modulate = Color( 0.682353, 0.662745, 0.682353, 1 )
+position = Vector2( 0.906125, 0 )
+scale = Vector2( 0.9, 0.9 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.0743275, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.047, 0.015 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.2, 0.2 )
+smoothing_enabled = true
+
+[node name="Light2D" type="Light2D" parent="."]
+light_mask = -2147483647
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+color = Color( 1, 0.87451, 0.454902, 1 )
+shadow_enabled = true
+shadow_filter = 5
